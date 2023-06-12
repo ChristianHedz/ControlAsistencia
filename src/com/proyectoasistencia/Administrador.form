@@ -132,11 +132,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="APARTADO DE ADMIN"/>
+            <Property name="text" type="java.lang.String" value="INFO ADMIN / ENVIO CORREO"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="40" width="500" height="60"/>
+              <AbsoluteConstraints x="180" y="50" width="530" height="60"/>
             </Constraint>
           </Constraints>
         </Component>

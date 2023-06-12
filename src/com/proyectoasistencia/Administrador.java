@@ -1,11 +1,9 @@
 
 package com.proyectoasistencia;
 
-/**
- *
- * @author crist
- */
+
 public class Administrador extends javax.swing.JFrame {
+    
     
     public Administrador() {
         initComponents();
@@ -67,8 +65,8 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel3.setText("APARTADO DE ADMIN");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 500, 60));
+        jLabel3.setText("INFO ADMIN / ENVIO CORREO");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 530, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/peakpx (1).jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

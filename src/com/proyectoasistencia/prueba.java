@@ -6,6 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class prueba extends JPanel {
+    
+    public prueba(JProgressBar progressBar, Timer timer, int progress) {
+        this.progressBar = progressBar;
+        this.timer = timer;
+        this.progress = progress;
+    }
 
     private JProgressBar progressBar;
     private Timer timer;

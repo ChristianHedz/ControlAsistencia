@@ -20,6 +20,8 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -41,6 +43,7 @@ public class Sanciones extends javax.swing.JFrame {
     }
 
         public void mostrar() {
+        
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("CLAVE");
         modelo.addColumn("MOTIVO");
@@ -57,7 +60,6 @@ public class Sanciones extends javax.swing.JFrame {
 
         try(PreparedStatement a = getConnection().prepareStatement(sql);
             ResultSet rs = a.executeQuery()) {
-
             while (rs.next()) {
                 sanciones[0] = rs.getString(1);
                 sanciones[1] = rs.getString(2);
@@ -87,10 +89,17 @@ public class Sanciones extends javax.swing.JFrame {
                 a.setString(2, multa.getText());
                 a.setString(3, clave.getText());
                 a.executeUpdate();
+                getConnection().setAutoCommit(false);
                 JOptionPane.showMessageDialog(null, "REGISTRO ALMACENADO");
+                getConnection().commit();
                 limpiar();
                 mostrar();
             } catch (SQLException ex) {
+                try {
+                    getConnection().rollback();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Sanciones.class.getName()).log(Level.SEVERE, null, ex1);
+                }
                 JOptionPane.showMessageDialog(null, "ERROR AL REGISTRAR");
             }
         }
@@ -353,7 +362,7 @@ public class Sanciones extends javax.swing.JFrame {
         motivo.setBackground(new java.awt.Color(255, 255, 255));
         motivo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         motivo.setForeground(new java.awt.Color(255, 255, 255));
-        motivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Motivo_Sancion", "Retardo", "Sin Uniforme", "Sono Celular", "Sin Libreta" }));
+        motivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Motivo_Sancion", "Retardo", "Sin Uniforme", "Uso de Celular", "Sin Libreta" }));
         jPanel1.add(motivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 120, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/cerrar-sesion 32-px.png"))); // NOI18N

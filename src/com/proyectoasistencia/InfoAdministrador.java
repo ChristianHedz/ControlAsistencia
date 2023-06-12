@@ -2,20 +2,12 @@
 package com.proyectoasistencia;
 
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
-import java.time.format.TextStyle;
-import java.util.Locale;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -160,7 +152,6 @@ public class InfoAdministrador extends javax.swing.JFrame {
         }
     }
         
-
         
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -171,7 +162,6 @@ public class InfoAdministrador extends javax.swing.JFrame {
         tabla1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         editar = new javax.swing.JButton();
         contrasena = new javax.swing.JTextField();
         correo = new javax.swing.JTextField();
@@ -236,22 +226,6 @@ public class InfoAdministrador extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 140, 40));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/correoicon.jpg"))); // NOI18N
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton4MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton4MouseExited(evt);
-            }
-        });
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 560, 230, 100));
-
         editar.setBackground(new java.awt.Color(0, 0, 153));
         editar.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         editar.setForeground(new java.awt.Color(255, 255, 255));
@@ -291,8 +265,8 @@ public class InfoAdministrador extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setText("CONSULTAR / AGREGAR  SANCIONES");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 910, 40));
+        jLabel2.setText("INFORMACION ADMINISTRADOR");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 910, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/peakpx (2).jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 720));
@@ -306,7 +280,7 @@ public class InfoAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        MenuEmpleados ob = new MenuEmpleados();
+        Administrador ob = new Administrador();
         ob.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -341,20 +315,6 @@ public class InfoAdministrador extends javax.swing.JFrame {
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
        editar();
     }//GEN-LAST:event_editarActionPerformed
-
-    private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
-        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_jButton4MouseEntered
-
-    private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
-        setCursor(Cursor.getDefaultCursor());
-    }//GEN-LAST:event_jButton4MouseExited
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        EnvioCorreo envio = new EnvioCorreo();
-        envio.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -395,7 +355,6 @@ public class InfoAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton editar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
