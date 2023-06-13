@@ -47,7 +47,7 @@ public class ConexionMongoDB  {
 
     Document result = collection.find(query).first();
     
-    //Si se encuentro la imagen en mongoDB la guardamos en nuestra pc y le colocamos un nombre
+    //Si se encuentro la imagen en mongoDB la guardamos
     if (result != null) {
         Binary binaryData = (Binary) result.get("imagen");
         byte[] imageData2 = binaryData.getData();
